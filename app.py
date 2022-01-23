@@ -13,8 +13,11 @@ def hello():
     args = request.args
 
     name = args.get("name", default="", type=str)
-    name = "".join(map(lambda x: x if x.islower() else " " + x, name))
-    return name
+    greeting = "Hello Stranger"
+    if name:
+        greeting = "Hello" + "".join(map(lambda x: x if x.islower() else " " + x, name))
+
+    return greeting
 
 
 
