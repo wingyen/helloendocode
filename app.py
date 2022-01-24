@@ -1,8 +1,16 @@
 import os
+import sys
 from flask import Flask, redirect, request, jsonify
+import json
 from git import Repo
+import requests
+import datetime
+import time
+import logging
+from config import logger
 
 app = Flask(__name__)
+app.logger = logger
 
 
 @app.route("/")
@@ -19,7 +27,10 @@ def hello():
     if name:
         greeting = "Hello" + "".join(map(lambda x: x if x.islower() else " " + x, name))
 
+    print("printing",file=sys.stdout)
+
     return greeting
+
 
 @app.route("/versionz")
 def versionz():
@@ -27,7 +38,6 @@ def versionz():
     repo_name = repo.remotes.origin.url.split('.git')[0].split('/')[-1]
     repo_hash = repo.head.object.hexsha
     return jsonify(project_name=repo_name, hash=repo_hash)
-
 
 
 
