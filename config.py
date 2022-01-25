@@ -6,6 +6,6 @@ logger.setLevel(logging.INFO)
 
 handler = logging.StreamHandler()
 
-formatter = logging.Formatter("%(asctime)s - %(args)s")
+formatter = logging.Formatter("%(asctime)s - %(message)s")
 handler.setFormatter(formatter)
 logger.addHandler(handler)
