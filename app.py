@@ -25,7 +25,7 @@ def after_request(response):
 
 @app.route("/")
 def index():
-    return redirect('/helloworld')
+    return redirect('/helloworld'), 302
 
 
 @app.route("/helloworld")
