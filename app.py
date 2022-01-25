@@ -12,6 +12,8 @@ from config import logger
 app = Flask(__name__)
 app.logger = logger
 
+os.environ["GIT_PYTHON_REFRESH"] = "quiet"
+
 @app.after_request
 def after_request(response):
     # timestamp this is configured in logger

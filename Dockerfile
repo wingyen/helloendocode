@@ -3,15 +3,15 @@ FROM python:3.9-slim-buster
 WORKDIR /usr/src/app
 
 
-ENV VIRTUAL_ENV=/opt/env
-RUN python -m venv $VIRTUAL_ENV
-ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
-ENV PYTHONUNBUFFERED = 1
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV GIT_PYTHON_REFRESH=quiet
 
-COPY . .
-
+COPY requirements.txt /usr/src/app/requirements.txt
 
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD [ "make run" ]
+COPY . /usr/src/app/
+
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "app:app" ]
