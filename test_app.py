@@ -1,6 +1,6 @@
 import os
+import sys
 import pytest
-
 from app import app
 
 
@@ -27,8 +27,14 @@ def test_hello_name():
     assert resp1.status_code == 200
     assert b'Hello Charlotte Evelyn Neumann' in resp1.data
 
-def test_versionz():
+def test_versionz(capsys):
+
     resp = client.get('/versionz')
 
+    # read git hash in stdout 
+    stdout = os.popen('git rev-parse origin/main').read()
+
     assert resp.status_code == 200
+    assert resp.json['hash'] in stdout
     assert resp.json['project_name'] == "helloendocode"
+    
