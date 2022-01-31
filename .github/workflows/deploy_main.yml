@@ -10,7 +10,7 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: loadbalancedcluster
   GKE_ZONE: europe-west3-a
-  DEPLOYMENT_NAME: gke-test
+  DEPLOYMENT_NAME: hello-gke
   IMAGE: europe-west3-docker.pkg.dev/artifacts-339420/test/app:latest
 
 jobs:
