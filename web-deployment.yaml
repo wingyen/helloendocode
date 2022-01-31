@@ -13,9 +13,9 @@ spec:
         app: hello
     spec:
       containers:
-      - name: app
+      - name: hello
         image: europe-west3-docker.pkg.dev/artifacts-339420/test/app:latest
-        imagePullPolicy: "Always"
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         env:
