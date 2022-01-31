@@ -34,7 +34,7 @@ jobs:
       run: |
         pytest
 
-  build:
+  build-push-deploy:
 
     runs-on: ubuntu-latest
     environment: helloflask

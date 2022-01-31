@@ -15,8 +15,10 @@ spec:
       containers:
       - name: app
         image: europe-west3-docker.pkg.dev/artifacts-339420/test/app:latest
+        imagePullPolicy: "Always"
         ports:
         - containerPort: 8080
         env:
           - name: PORT
             value: "8080"
+      terminationGracePeriodSeconds: 30
