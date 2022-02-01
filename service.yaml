@@ -14,21 +14,13 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: hello-gke-pod-1
+  name: hello-gke
   labels: 
       app: hello
-      type: server
 spec:
   hostname: helloendocode-test
   containers:
   - name: hello
     image: europe-west3-docker.pkg.dev/artifacts-339420/test/app:latest
     imagePullPolicy: Always
-    resources:
-      limits:
-        memory: 512Mi
-        cpu: "1"
-      requests:
-        memory: 256Mi
-        cpu: "0.2"
   terminationGracePeriodSeconds: 30
