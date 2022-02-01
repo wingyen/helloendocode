@@ -22,4 +22,4 @@ COPY . /usr/src/app/
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8080
-ENTRYPOINT ["gunicorn", "--log-level", "debug", "--graceful-timeout", "30", "-b", "0.0.0.0:8080", "app:app" ]
+ENTRYPOINT ["gunicorn", "--log-level", "debug", "--keep-alive", "5", "-b", "0.0.0.0:8080", "app:app" ]
