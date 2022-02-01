@@ -19,7 +19,7 @@ metadata:
       app: hello
       type: server
 spec:
-  hostname: helloendocode.test.com
+  hostname: helloendocode-test
   containers:
   - name: hello
     image: europe-west3-docker.pkg.dev/artifacts-339420/test/app:latest
