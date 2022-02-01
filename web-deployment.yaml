@@ -22,5 +22,3 @@ spec:
           - name: PORT
             value: "8080"
       terminationGracePeriodSeconds: 30
-  type: ExternalName
-  externalName: helloendocode.test.com
