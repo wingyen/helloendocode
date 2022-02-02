@@ -7,7 +7,7 @@ import requests
 import datetime
 import time
 import logging
-from config import logger, GracefulShutdown
+from config import logger
 import signal
 from multiprocessing import Process
 
