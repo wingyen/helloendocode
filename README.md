@@ -23,3 +23,11 @@
 - When the server is up and running you should be able to access http://0.0.0.0:8080
 
 - In the logs you see logs in this format: (ISO timestamp) (host addr) (request) (response code)
+
+
+## Endpoints from k8s
+
+- http://34.107.91.63/helloworld
+- http://34.107.91.63/versionz
+
+> About Graceful Shutdown: gunicorn has timeout=25, it should give some margine for workers to shutdown and exit master before Pod termination. 
