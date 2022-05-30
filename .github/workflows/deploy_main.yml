@@ -73,7 +73,7 @@ jobs:
         push: true
         tags: |
           ${{ secrets.DOCKER_HUB_USERNAME }}/helloflask:latest
-          europe-west3-docker.pkg.dev/artifacts-339420/test/app:latest
+          europe-west3-docker.pkg.dev/xin-test/helloworld/app:latest
     # Get the GKE credentials so we can deploy to the cluster
     - run: |-
         gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
